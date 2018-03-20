@@ -1,0 +1,75 @@
+<br>
+<br>
+<div id="form-collapse" class="collapse hide">
+    <form ng-submit="editSubmit()" name="formevaluation" class="form-container container">
+        <br>
+        <div class="form-groupe-1">
+            <div class="form-group">
+                <label for="formation">Nom Formation :</label>
+                <select required class="form-control" ng-model="editEvaluation.type" name="formation" id="formation">
+                    <option value="M2DOSI">Master Développement à l'Offshore des Systèmes d'Information </option>
+                    <option value="M1TILL">Master technologie de l'Information et Ingénierie du Logiciel </option>
+                    <option value="M2TILL">Master technologie de l'Information et Ingénierie du Logiciel</option>
+                    <option value="M2LSE ">Master Logiciel pour Système Embarqué </option>
+                </select>
+
+                <br>
+                <div class="form-group">
+                    <label>Année universitaire :</label>
+                    <span ng-show="formevaluation.annee.$dirty && formevaluation.annee.$error.required" class="badge badge-danger">Champ obligatoire</span>
+                    <select required class="form-control" ng-model="editevaluation.annee" name="annee">
+                        <option value="1">2014-2015 </option>
+
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-groupe-2">
+            <div class="form-group">
+                <label>Unité d'enseignement :</label>
+                <span ng-show="formevaluation.unite.$dirty && formevaluation.unite.$error.required" class="badge badge-danger">Champ obligatoire</span>
+                <select required class="form-control" ng-model="editevaluation.unite" name="ue">
+                    <option value="ISI">ISI</option>
+                    <option value="IDL">IDL</option>
+                    <option value="J2EE">J2EE</option>
+                    <option value="SR">SR</option>
+                    <option value="EDE">EDE</option>
+                    <option value="WEB">WEB</option>
+                    <option value="CO">CO</option>
+                    <option value="PCO">PCO</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label>Elements consécutifs :</label>
+                <span ng-show="formevaluation.designation.$dirty && formevaluation.designation.$error.required" class="badge badge-danger">Champ obligatoire</span>
+                <select required class="form-control" ng-model="editevaluation.designation" name="ec">
+                    <option value="ERP">ERP </option>
+                    <option value="SFM">SFM </option>
+                    <option value="CME">CME </option>
+                    <option value="CPR">CPR </option>
+                    <option value=""> </option>
+                    <option value=""> </option>
+
+                </select>
+            </div>
+
+
+            <div ng-show="formevaluation.$dirty && !formevaluation.$valid" class="alert alert-danger">
+                <strong>Validation!</strong> Veuillez verifier que vous avez bien rempli tous les champs.
+            </div>
+
+          </div>
+
+            <!-- data-toggle="collapse" data-target="#demo" -->
+            <button type="submit" class="btn-validate btn btn-success ">Valider {{editoption}}</button>
+
+            <button type="reset" class="btn-cancel btn btn-danger" ng-click="cancelEditing()">Annuler</button>
+    </form>
+
+</div>
+
+<br>
+<br>
